@@ -41,7 +41,7 @@ module.exports = {
     comments: {
       collection: 'comment',
       via: 'wordRef'
-    }
+    },
     // dialect:{
     //   type: 'string',
     //   enum: ['ustang', 'kham', 'amdo','choni','ladakhi','balti','burig','lahuli-spiti','dzongkha','sikkimese','sherpa','kyirong-kagate','formal'],
@@ -51,10 +51,12 @@ module.exports = {
     //   collection: 'Word',
     //   via: 'id'
     // },
-    //tags:{
-    //  collection:"Tag",
-    //  via:'words'
-    //}
+    tags:{
+      collection:"Tag",
+      via:'related',
+      dominant: true // could be on either model, doesn't matter
+
+    }
 
 
   }

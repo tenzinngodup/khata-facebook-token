@@ -1,7 +1,7 @@
 /**
- * WordController
+ * QuestionController
  *
- * @description :: Server-side logic for managing words
+ * @description :: Server-side logic for managing questions
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 var passport = require('passport');
@@ -26,12 +26,13 @@ module.exports = {
       var values = req.body.data;
       values.author = user.id;
 
-      Word.create(values).exec(function (err, records) {
+      Question.create(values).exec(function (err, records) {
         return res.send(records);
 
       });
     })(req, res);
 
   }
+
 };
 

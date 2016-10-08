@@ -16,6 +16,7 @@ module.exports = {
     displayName:'string',
     email:'string',
     token:"string",
+    bio: "string",
     toJSON: function() {
       var obj = this.toObject();
       delete obj.token;

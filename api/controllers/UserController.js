@@ -57,6 +57,24 @@ module.exports = {
       res.ok();
     })(req, res);
 
+  },
+  'Update':function(req,res,next){
+    passport.authenticate('facebook-token', function(error, user, info) {
+      // do stuff with user
+      if(error){
+        return res.send(error);
+      }else if(info){
+        return res.send(info);
+
+      }
+      var values = req.body;
+      values.id = user.id;
+
+      User.update(values).exec(function (err, records) {
+        return res.send(records);
+
+      });
+    })(req, res);
   }
 
 };
